@@ -1,8 +1,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
+    <color name="my_primary">#FF00</color>
+    <color name="my_secondary">#3C21D1</color>
+    <color name="my_statusbar">#77C61C</color>
+
+    <color name="blue">#081455</color>
+    <color name="wheat">#E8DFDF</color>
+    <color name="my_text">#ED0A</color>
     <style name="Base.Theme.RiyasAndroidLab" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/my_primary</item>
+        <item name="colorSecondary">@color/my_secondary</item>
+        <item name="android:statusBarColor">@color/my_statusbar</item>
+
+        <item name="android:textColor">@color/my_text</item>
     </style>
 
     <style name="Theme.RiyasAndroidLab" parent="Base.Theme.RiyasAndroidLab" />
