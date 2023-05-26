@@ -1,34 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="horizontal"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".data.ui.MainActivity">
 
     <TextView
+        android:id="@+id/textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_message"
-        android:id="@+id/textview"/>
+        android:text="@string/hello_message" />
 
     <Button
+        android:id="@+id/mybutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_message"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="107dp"
-        android:id="@+id/mybutton"/>
+        tools:layout_editor_absoluteY="107dp" />
 
-    <EditText
+    <CheckBox
+        android:id="@+id/checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Do you drink coffee ?"/>
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Do you drink coffee ?"/>
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Do you drink coffee ?"/>
+
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo_algonquin" />
+
+    <EditText
         android:id="@+id/editText"
-        android:text="@string/edit_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:hint="@string/hint_text"
-        />
+        android:text="@string/edit_message" />
+
+    <ImageButton
+        android:id="@+id/imagebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo_algonquin" />
 
 
 </LinearLayout>

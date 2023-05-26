@@ -3,7 +3,13 @@ package algonquin.cst2335.riya0004.data.ui;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,24 +32,40 @@ public class MainActivity extends AppCompatActivity {
         variableBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(variableBinding.getRoot());
 
-        Button btn = findViewById(R.id.mybutton);
         TextView mytext = variableBinding.textview;
-        EditText myedit = findViewById(R.id.editText);
-        String editString = myedit.getText().toString();
-        mytext.setText("Your edit has: "+editString);
-
-        btn.setOnClickListener( (View v) -> {mytext.setText("Your edit text has: " + editString);});
+        Button btn = variableBinding.mybutton;
+        EditText myedit = variableBinding.editText;
+        CheckBox checkBox = variableBinding.checkBox;
+        Switch switch1 = variableBinding.switch1;
+        RadioButton radioButton = variableBinding.radioButton;
+        ImageView imageView = variableBinding.imageview;
+        ImageButton imageButton = variableBinding.imagebutton;
 
 //        variableBinding.textview.setText(model.editString);
-        variableBinding.mybutton.setOnClickListener(click ->
-        {
-            model.editString.postValue(variableBinding.editText.getText().toString());
-            variableBinding.textview.setText("Your edit text has: "+ model.editString);
-        });
 
         model.editString.observe(this, s -> {
            variableBinding.textview.setText("Your edit text has: "+s);
         });
+        variableBinding.mybutton.setOnClickListener(click ->
+        {
+            model.editString.postValue(variableBinding.editText.getText().toString());
+        });
+
+        model.isSelected.observe(this, selected ->{
+            variableBinding.checkBox.setChecked(selected);
+            variableBinding.radioButton.setChecked(selected);
+            variableBinding.switch1.setChecked(selected);
+        });
+
+     checkBox.setOnCheckedChangeListener((mycheckBox,isChecked)->{
+         model.isSelected.postValue(isChecked);
+     });
+     switch1.setOnCheckedChangeListener((myswitch,isChecked)->{
+            model.isSelected.postValue(isChecked);
+     });
+     radioButton.setOnCheckedChangeListener((myradiobutton,isChecked)->{
+            model.isSelected.postValue(isChecked);
+     });
     }
 
 }
