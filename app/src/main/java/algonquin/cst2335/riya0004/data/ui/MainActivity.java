@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         Switch switch1 = variableBinding.switch1;
         RadioButton radioButton = variableBinding.radioButton;
         ImageView imageView = variableBinding.imageview;
-        ImageButton imageButton = variableBinding.imagebutton;
+//        ImageButton imageButton = variableBinding.imagebutton;
 
 //        variableBinding.textview.setText(model.editString);
 
@@ -66,6 +67,12 @@ public class MainActivity extends AppCompatActivity {
      radioButton.setOnCheckedChangeListener((myradiobutton,isChecked)->{
             model.isSelected.postValue(isChecked);
      });
+
+     variableBinding.imagebutton.setOnClickListener((click)->{
+
+         Toast.makeText(this,"The width = " + variableBinding.imagebutton.getWidth() + " and height = " + variableBinding.imagebutton.getHeight(), Toast.LENGTH_SHORT).show();
+     });
     }
+
 
 }
