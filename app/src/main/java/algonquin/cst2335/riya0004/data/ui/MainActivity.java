@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         Switch switch1 = variableBinding.switch1;
         RadioButton radioButton = variableBinding.radioButton;
         ImageView imageView = variableBinding.imageview;
-//        ImageButton imageButton = variableBinding.imagebutton;
+        ImageButton imageButton = variableBinding.imagebutton;
 
 //        variableBinding.textview.setText(model.editString);
 
@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         model.isSelected.observe(this, selected ->{
+                Toast.makeText(MainActivity.this,"The value is now"+ selected, Toast.LENGTH_SHORT).show();
             variableBinding.checkBox.setChecked(selected);
             variableBinding.radioButton.setChecked(selected);
             variableBinding.switch1.setChecked(selected);
@@ -68,11 +69,10 @@ public class MainActivity extends AppCompatActivity {
             model.isSelected.postValue(isChecked);
      });
 
-     variableBinding.imagebutton.setOnClickListener((click)->{
+        variableBinding.imagebutton.setOnClickListener((click)->{
 
-         Toast.makeText(this,"The width = " + variableBinding.imagebutton.getWidth() + " and height = " + variableBinding.imagebutton.getHeight(), Toast.LENGTH_SHORT).show();
-     });
+            Toast.makeText(MainActivity.this,"The width = " + variableBinding.imagebutton.getWidth() + " and height = " + variableBinding.imagebutton.getHeight(), Toast.LENGTH_SHORT).show();
+        });
     }
-
 
 }
